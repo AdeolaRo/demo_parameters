@@ -13,36 +13,38 @@
     <h1 class="text-center"> Le formulaire des Chats</h1>
 
     <hr>
+    <div class="form-container text-bg-secondary col-6 offset-3">
+        <form action="form" method="post" class="mb-3 row" class="text-bg-light p-3">
 
-    <form action="form" method="post" class="mb-3 row" class="text-bg-light p-3">
+            <div>
+                <label for="name" class="col-sm-2 col-form-label mt-10 ml-5">Name :</label>
+                <input type="text" id="name" name="name">
+            </div>
 
-        <div>
-            <label for="name" class="col-sm-2 col-form-label">Name :</label>
-            <input type="text" id="name" name="name">
-        </div>
+            <div>
+                <label for="race" class="col-sm-2 col-form-label">Race :</label>
+                <input type="text" id="race" name="race">
+            </div>
 
-        <div>
-            <label for="race" class="col-sm-2 col-form-label">Race :</label>
-            <input type="text" id="race" name="race">
-        </div>
+            <div>
+                <label for="favFood" class="col-sm-2 col-form-label">Favorite Food :</label>
+                <input type="text" id="favFood" name="favFood">
+            </div>
 
-        <div>
-            <label for="favFood" class="col-sm-2 col-form-label">Favorite Food :</label>
-            <input type="text" id="favFood" name="favFood">
-        </div>
+            <div>
+                <label for="birthDate" class="col-sm-2 col-form-label">Birth Date :</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
 
-        <div>
-            <label for="birthDate" class="col-sm-2 col-form-label">Birth Date :</label>
-            <input type="date" id="birthDate" name="birthDate">
-        </div>
+            <hr>
 
-        <hr>
+            <div class="mb-1 col-first">
+                <button class="btn btn-warning"> Ajouter</button>
+            </div>
 
-       <div class="mb-1 col-first"><button class="btn btn-warning"> Ajouter</button></div>
-
-    </form>
-
-    <table class="table table-dark text-center align-middle">
+        </form>
+    </div>
+    <table class="table table-dark text-center align-middle col-8">
         <thead>
         <tr>
             <th>#</th>
@@ -64,7 +66,7 @@
             </td>
             <td><%= cats.get(i).getFavFood() %>
             </td>
-            <td><%= cats.get(i).getBirthDate() %>
+            <td><%= cats.get(i).getBirthDate().getDayOfMonth()+" / " +cats.get(i).getBirthDate().getMonthValue()+" / " +cats.get(i).getBirthDate().getYear()%>
             </td>
         </tr>
         <% } %>
